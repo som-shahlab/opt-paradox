@@ -1,155 +1,58 @@
-# 🩺 Clinical Diagnosis Agent
-
-*A framework for testing clinical reasoning capabilities of language model agents using LangGraph.*
+# 🔬 Optimization Paradox in Multi-Agent Systems
 
 ---
 
-## 🧠 Overview
+## 🚀 Quick Start
 
-This project implements single-agent and multi-agent workflows to evaluate the end-to-end clinical diagnosis capabilities of language models (LLMs). The system:
+1. **Install dependencies**
+  ```bash
+  conda env create -f environment.yaml
+  conda activate clinagent_env
+  ```
 
-* Reads patient histories
-* Requests and interprets physical exams, lab tests, and imaging
-* Provides final diagnoses and treatment recommendations
-* Evaluates diagnostic accuracy and efficiency
+2. **Configure APIs**
+  ```bash
+  cp config.example.yaml config.yaml
+# Edit config.yaml with your API keys
+  ```
 
-Supported LLM backends include Azure OpenAI, Anthropic Claude, Google Gemini, Meta Llama, OpenAI o3-mini, and DeepSeek.
+3. **Run evaluation**
+  ```bash
+  # Single agent
+  python3 run_single_agent.py --model_id_main gpt --dataset_type val
 
----
+  # Multi-agent 
+  python3 run_multi_agent.py --model_id_info gemini --model_id_diagnosis gpt --dataset_type val
+  ```
 
-## 🦠 Supported Pathologies
+## 📊 What This Does
+Tests clinical reasoning on **2,400 real patient cases** across **4 abdominal conditions**:
 
-* Appendicitis
-* Cholecystitis
-* Pancreatitis
-* Diverticulitis
+- **Single-agent:** One model handles everything  
+- **Multi-agent:** Specialized models for information gathering, interpretation, and diagnosis  
+- **Best-of-Breed:** Top-performing components combined _(spoiler: performs worst!)_
 
----
+## 🏥 Key Finding
+The *Best-of-Breed* system built from individually optimal components achieved only 67.7% accuracy vs 77.4% for a well-integrated multi-agent system, despite superior process metrics.
 
-## 📝 Main Findings
+## 📈 Results & Evaluation
+  ```bash
+  python3 run_evals.py --log_dir logs/<experiment_name>
+  ```
+Results include diagnostic accuracy, process adherence, and cost metrics.
 
-*(Main findings will be updated here upon paper publication.)*
+## 🔧 Supported Models
+Azure OpenAI, Claude, Gemini, Llama, o3-mini, DeepSeek
 
-<details>
-  <summary>
-  	<b>Main Findings</b>
-  </summary>
+## 📋 Requirements
 
-*(Details will be provided here.)*
-
-</details>
-
----
-
-## 🗓️ Updates
-
-* *(Example)* June 2025 : Our preprint is available online!
-
----
-
-## 📈 Reproducing Results
-
-**Note:** To replicate results, copy the template and configure your own settings:
-
-```bash
-cp config.example.yaml config.yaml
-```
-
-Then edit `config.yaml` with your actual API keys, paths, and endpoint URLs.
-
-All code was tested with Python v3.10. Cloud-hosted models (Azure, Claude, Gemini) run on standard personal computers.
-
-### ⚙️ Installation
-
-```bash
-conda env create -f environment.yaml
-conda activate clinagent_env
-pip install -r requirements.txt
-```
-
----
-
-### 🧪 Single-Agent Pipeline
-
-```bash
-python run_single_agent.py \
-  --model_id_main <platform> \
-  --model_id_matcher <platform> \
-  --dataset_type {train,val,test} \
-  [--log_to_file] \
-  [--log_filename LOGFILE] \
-  [--concurrency N]
-```
-
-*Example:*
-
-```bash
-python run_single_agent.py \
-  --model_id_main gpt \
-  --model_id_matcher claude \
-  --dataset_type val \
-```
-
----
-
-### 🧬 Multi-Agent Pipeline
-
-```bash
-python run_multi_agent.py \
-  --model_id_info <platform> \
-  --model_id_interpretation <platform> \
-  --model_id_matcher <platform> \
-  --model_id_diagnosis <platform> \
-  --dataset_type {train,val,test} \
-  [--log_to_file] \
-  [--log_filename LOGFILE] \
-  [--concurrency N]
-```
-
-*Example:*
-
-```bash
-python run_multi_agent.py \
-  --model_id_info gemini \
-  --model_id_interpretation claude \
-  --model_id_matcher llama \
-  --model_id_diagnosis gpt \
-  --dataset_type test \
-  --log_to_file \
-```
-
----
-
-### 📊 Evaluating Logs
-
-After running either pipeline, evaluate the generated logs using:
-
-```bash
-python run_evals.py --log_dir logs/<log_directory>
-```
-
-*Example:*
-
-```bash
-python run_evals.py --log_dir logs/gpt_gpt_val
-```
-
-Results are saved in the `results/` directory.
-
----
+- Python 3.10+  
+- API keys for your chosen models  
+- [MIMIC-CDM dataset access](https://physionet.org/content/mimic-iv-ext-cdm/1.1/) 
 
 ## 📚 Citation
 
 *(Placeholder for future publication citation.)*
-
-```bibtex
-@article{your_citation_here,
-  title={The Optimization Paradox: When Best Components Yield Suboptimal Clinical AI Systems},
-  author={Your Name and others},
-  journal={Journal Name},
-  year={202X}
-}
-```
 
 ---
 
