@@ -1,0 +1,63 @@
+==== Summary Statistics ====
+Cost Metrics:
+Total lab cost: $92118.38
+Lab cost per patient: $77.41
+Total token cost: $15.62
+Results CSV: results/llama_gpt_test.csv
+Elapsed time: 31671.770471334457
+Failed cases: 6
+
+Micro Average (Overall Diagnosis Accuracy): 75.29%
+Macro Average (Per-Pathology Accuracy):     72.04%
+
+Pathology-wise Accuracy:
+Pathology-wise Accuracy:
+pancreatitis: 66.18% (182/275)
+appendicitis: 88.25% (413/468)
+cholecystitis: 70.03% (222/317)
+diverticulitis: 63.71% (79/124)
+
+Appendicitis:
+Appendectomy Requested: 99.79% (467/468)
+Antibiotics Requested: 99.79% (467/468)
+Support Requested: 100.00% (468/468)
+
+Cholecystitis:
+Cholecystectomy Requested: 100.00% (317/317)
+Antibiotics Requested: 100.00% (317/317)
+Support Requested: 100.00% (317/317)
+
+Diverticulitis:
+Colonoscopy Requested: 98.39% (122/124)
+Antibiotics Requested: 100.00% (124/124)
+Support Requested: 99.19% (123/124)
+Drainage Requested: 98.39% (122/124)
+Colectomy Requested: 98.39% (122/124)
+
+Pancreatitis:
+Support Requested: 95.64% (263/275)
+Drainage Requested: 5.82% (16/275)
+ERCP Requested: 30.91% (85/275)
+Cholecystectomy Requested: 20.36% (56/275)
+
+
+Information Request Evaluation:
+Physical Exam First: 17.23%
+Physical Exam Any  : 87.14%
+
+Top-1 accuracy : 75.29%
+Top-3 accuracy : 85.88%
+Top-5 accuracy : 88.74%
+
+Information Request Breakdown:
+Total Patients: 1184
+Total # of tool calls: 9386
+Average number of tools per case: 7.927364864864865
+Average Labs per Case: 6.966216216216216
+Average Imaging per Case: 0.0
+Average Maneuvers per Case: 3.308277027027027
+Fraction of Patients with Labs Requested: 0.9670608108108109
+Fraction of Patients with Imaging Requested: 0.0
+Coverage (Averaged Per Patient): 0.5844594594594589
+Coverage (Averaged over the entire Dataset): 0.5888030888030888
+Coverage-to-Test Ratio: 0.073726827189431

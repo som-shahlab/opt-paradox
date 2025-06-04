@@ -1,0 +1,63 @@
+==== Summary Statistics ====
+Cost Metrics:
+Total lab cost: $144005.25
+Lab cost per patient: $121.01
+Total token cost: $38.65
+Results CSV: results/multi_gemini_gemini_gemini_test.csv
+Elapsed time: 62268.12826824188
+Failed cases: 0
+
+Micro Average (Overall Diagnosis Accuracy): 75.97%
+Macro Average (Per-Pathology Accuracy):     71.95%
+
+Pathology-wise Accuracy:
+Pathology-wise Accuracy:
+pancreatitis: 72.20% (200/277)
+appendicitis: 88.56% (418/472)
+cholecystitis: 66.56% (211/317)
+diverticulitis: 60.48% (75/124)
+
+Appendicitis:
+Appendectomy Requested: 100.00% (472/472)
+Antibiotics Requested: 100.00% (472/472)
+Support Requested: 100.00% (472/472)
+
+Cholecystitis:
+Cholecystectomy Requested: 100.00% (317/317)
+Antibiotics Requested: 99.68% (316/317)
+Support Requested: 100.00% (317/317)
+
+Diverticulitis:
+Colonoscopy Requested: 98.39% (122/124)
+Antibiotics Requested: 100.00% (124/124)
+Support Requested: 100.00% (124/124)
+Drainage Requested: 100.00% (124/124)
+Colectomy Requested: 98.39% (122/124)
+
+Pancreatitis:
+Support Requested: 98.56% (273/277)
+Drainage Requested: 7.94% (22/277)
+ERCP Requested: 37.91% (105/277)
+Cholecystectomy Requested: 35.02% (97/277)
+
+
+Information Request Evaluation:
+Physical Exam First: 54.87%
+Physical Exam Any  : 56.97%
+
+Top-1 accuracy : 75.97%
+Top-3 accuracy : 86.30%
+Top-5 accuracy : 90.42%
+
+Information Request Breakdown:
+Total Patients: 1190
+Total # of tool calls: 6911
+Average number of tools per case: 5.807563025210084
+Average Labs per Case: 5.231932773109244
+Average Imaging per Case: 0.0
+Average Maneuvers per Case: 4.557142857142857
+Fraction of Patients with Labs Requested: 0.8050420168067227
+Fraction of Patients with Imaging Requested: 0.0
+Coverage (Averaged Per Patient): 0.41176470588235137
+Coverage (Averaged over the entire Dataset): 0.4207492795389049
+Coverage-to-Test Ratio: 0.07090146143828652
