@@ -1,5 +1,19 @@
 # 🔬 Optimization Paradox in Multi-Agent Systems
 
+This repo contains code for the **"The Optimization Paradox in Clinical AI Multi-Agent Systems"** paper. It demonstrates how **optimizing individual components can catastrophically undermine overall system performance** in multi-agent clinical AI systems. The framework enables **evaluation of both single-agent and multi-agent workflows** on real patient cases from the MIMIC-CDM dataset using multiple LLM families.
+
+It currently supports **8 different LLM families** and provides comprehensive evaluation metrics including diagnostic accuracy, process adherence, and cost efficiency.
+
+**📖 Table of Contents**
+1. [🚀 Quick Start](#-quick-start)
+2. [📊 What This Does](#-what-this-does)
+3. [🏥 Key Finding](#-key-finding)
+4. [📈 Results & Evaluation](#-results--evaluation)
+5. [🔧 Supported Models](#-supported-models)
+6. [📋 Requirements](#-requirements)
+7. [📚 Citation](#-citation)
+8. [📧 Issues](#-issues)
+
 ---
 
 ## 🚀 Quick Start
